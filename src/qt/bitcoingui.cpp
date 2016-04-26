@@ -775,32 +775,33 @@ void BitcoinGUI::incomingTransaction(const QModelIndex & parent, int start, int 
     TransactionTableModel *ttm = walletModel->getTransactionTableModel();
     qint64 amount = ttm->index(start, TransactionTableModel::Amount, parent)
                     .data(Qt::EditRole).toULongLong();
-    if(!clientModel->inInitialBlockDownload())
-    {
-        // On new transaction, make an info balloon
-        // Unless the initial block download is in progress, to prevent balloon-spam
-        QString date = ttm->index(start, TransactionTableModel::Date, parent)
-                        .data().toString();
-        QString type = ttm->index(start, TransactionTableModel::Type, parent)
-                        .data().toString();
-        QString address = ttm->index(start, TransactionTableModel::ToAddress, parent)
-                        .data().toString();
-        QIcon icon = qvariant_cast<QIcon>(ttm->index(start,
-                            TransactionTableModel::ToAddress, parent)
-                        .data(Qt::DecorationRole));
+	if(clientModel->inInitialBlockDownload()) // Prevent balloon-spam during initial block download
+		return;
+	if(clientModel->getOptionsModel() // Disable balloon-spam if the user doesn't want it
+	  && clientModel->getOptionsModel()->getHideNotifications())
+		return;
+	// On new transaction, make an info balloon
+	QString date = ttm->index(start, TransactionTableModel::Date, parent)
+					.data().toString();
+	QString type = ttm->index(start, TransactionTableModel::Type, parent)
+					.data().toString();
+	QString address = ttm->index(start, TransactionTableModel::ToAddress, parent)
+					.data().toString();
+	QIcon icon = qvariant_cast<QIcon>(ttm->index(start,
+						TransactionTableModel::ToAddress, parent)
+					.data(Qt::DecorationRole));
 
-        notificator->notify(Notificator::Information,
-                            (amount)<0 ? tr("Sent transaction") :
-                                         tr("Incoming transaction"),
-                              tr("Date: %1\n"
-                                 "Amount: %2\n"
-                                 "Type: %3\n"
-                                 "Address: %4\n")
-                              .arg(date)
-                              .arg(BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), amount, true))
-                              .arg(type)
-                              .arg(address), icon);
-    }
+	notificator->notify(Notificator::Information,
+						(amount)<0 ? tr("Sent transaction") :
+									 tr("Incoming transaction"),
+						  tr("Date: %1\n"
+							 "Amount: %2\n"
+							 "Type: %3\n"
+							 "Address: %4\n")
+						  .arg(date)
+						  .arg(BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), amount, true))
+						  .arg(type)
+						  .arg(address), icon);
 }
 
 void BitcoinGUI::incomingMessage(const QModelIndex & parent, int start, int end)

@@ -143,6 +143,7 @@ void OptionsDialog::setMapper()
 #ifndef Q_OS_MAC
     mapper->addMapping(ui->minimizeToTray, OptionsModel::MinimizeToTray);
     mapper->addMapping(ui->minimizeOnClose, OptionsModel::MinimizeOnClose);
+	mapper->addMapping(ui->hideNotifications, OptionsModel::HideNotifications);
 #endif
 
     /* Display */

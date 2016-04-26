@@ -43,6 +43,7 @@ void OptionsModel::Init()
     bDisplayAddresses = settings.value("bDisplayAddresses", false).toBool();
     fMinimizeToTray = settings.value("fMinimizeToTray", false).toBool();
     fMinimizeOnClose = settings.value("fMinimizeOnClose", false).toBool();
+	fHideNotifications = settings.value("fHideNotifications", false).toBool();
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
     nTransactionFee = settings.value("nTransactionFee").toLongLong();
     nReserveBalance = settings.value("nReserveBalance").toLongLong();
@@ -82,6 +83,8 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
             return settings.value("fUseUPnP", GetBoolArg("-upnp", true));
         case MinimizeOnClose:
             return QVariant(fMinimizeOnClose);
+		case HideNotifications:
+			return QVariant(fHideNotifications);
         case ProxyUse:
             return settings.value("fUseProxy", false);
         case ProxyIP: {
@@ -145,6 +148,10 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
             fMinimizeOnClose = value.toBool();
             settings.setValue("fMinimizeOnClose", fMinimizeOnClose);
             break;
+		case HideNotifications:
+			fHideNotifications = value.toBool();
+			settings.setValue("fHideNotifications", fHideNotifications);
+			break;
         case ProxyUse:
             settings.setValue("fUseProxy", value.toBool());
             ApplyProxySettings();
@@ -246,6 +253,11 @@ bool OptionsModel::getMinimizeToTray()
 bool OptionsModel::getMinimizeOnClose()
 {
     return fMinimizeOnClose;
+}
+
+bool OptionsModel::getHideNotifications()
+{
+	return fHideNotifications;
 }
 
 int OptionsModel::getDisplayUnit()
