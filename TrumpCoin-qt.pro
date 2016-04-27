@@ -1,6 +1,7 @@
+
 TEMPLATE = app
 TARGET = TrumpCoin-qt
-VERSION = 1.0.0.0
+VERSION = 1.0.0.1
 INCLUDEPATH += src src/json src/qt src/qt/plugins/mrichtexteditor
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE
 CONFIG += no_include_pwd
