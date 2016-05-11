@@ -21,6 +21,7 @@ public:
         MinimizeToTray,    // bool
         MapPortUPnP,       // bool
         MinimizeOnClose,   // bool
+		HideNotifications, // bool
         ProxyUse,          // bool
         ProxyIP,           // QString
         ProxyPort,         // int
@@ -46,6 +47,7 @@ public:
     qint64 getReserveBalance();
     bool getMinimizeToTray();
     bool getMinimizeOnClose();
+	bool getHideNotifications();
     int getDisplayUnit();
     bool getDisplayAddresses();
     bool getCoinControlFeatures();
@@ -56,6 +58,7 @@ private:
     bool bDisplayAddresses;
     bool fMinimizeToTray;
     bool fMinimizeOnClose;
+	bool fHideNotifications;
     bool fCoinControlFeatures;
     QString language;
 

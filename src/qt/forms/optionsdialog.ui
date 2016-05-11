@@ -23,7 +23,7 @@
       <enum>QTabWidget::North</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tabMain">
       <attribute name="title">
@@ -308,6 +308,16 @@
          </property>
          <property name="text">
           <string>M&amp;inimize on close</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="hideNotifications">
+         <property name="toolTip">
+          <string>Hide popup notifications for transactions and mining</string>
+         </property>
+         <property name="text">
+          <string>&amp;Hide popup notifications</string>
          </property>
         </widget>
        </item>
