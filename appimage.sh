@@ -23,10 +23,9 @@ wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./func
 
 cd $APP.AppDir
 
-sudo chown -R $USER /app/
-sed -i -e 's|/app|././|g' /app/bin/TrumpCoin-qt
+sudo chown -R $USER .
 
-cp /app/bin/TrumpCoin-qt ./usr/bin/
+cp ../../../TrumpCoin-qt ./usr/bin/
 
 ########################################################################
 # Copy desktop and icon file to AppDir for AppRun to pick them up
