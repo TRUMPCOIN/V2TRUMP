@@ -25,7 +25,7 @@ cd $APP.AppDir
 
 sudo chown -R $USER .
 
-cp /usr/bin/trumpcoin-qt ./usr/bin/
+cp /usr/bin/TrumpCoin-qt ./usr/bin/
 
 ########################################################################
 # Copy desktop and icon file to AppDir for AppRun to pick them up
@@ -34,7 +34,7 @@ cp /usr/bin/trumpcoin-qt ./usr/bin/
 get_apprun
 
 # FIXME: Use the official .desktop file - where is it?
-cat > $LOWERAPP.desktop <<EOF
+cat > $APP.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=Trumpcoin
@@ -44,7 +44,7 @@ Comment=Trumpcoin P2P Cryptocurrency
 Comment[fr]=Trumpcoin, monnaie virtuelle cryptographique pair à pair
 Comment[tr]=Trumpcoin, eşten eşe kriptografik sanal para birimi
 Categories=Office;
-Exec=$LOWERAPP
+Exec=$APP
 EOF
 
 find ../../ -name bitcoin128.png -exec cp {} trumpcoin.png \;
