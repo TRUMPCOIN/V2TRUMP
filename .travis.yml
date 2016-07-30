@@ -14,6 +14,7 @@ script:
     - make
     - make check
     - sudo cp TrumpCoin-qt /usr/bin/TrumpCoin-qt
+    - sudo cp share/pixmaps/bitcoin.ico /usr/share/pixmaps/trumpcoin.ico
     - bash -ex appimage.sh
     
 branches:

@@ -38,7 +38,7 @@ cat > $APP.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=Trumpcoin
-Icon=trumpcoin.png
+Icon=trumpcoin.ico
 Type=Application
 Comment=Trumpcoin P2P Cryptocurrency
 Comment[fr]=Trumpcoin, monnaie virtuelle cryptographique pair à pair
@@ -47,7 +47,7 @@ Categories=Office;
 Exec=$APP
 EOF
 
-find ../../ -name bitcoin128.png -exec cp {} trumpcoin.png \;
+cp /usr/share/pixmaps/trumpcoin.ico trumpcoin.ico
 
 ########################################################################
 # Copy in the dependencies that cannot be assumed to be available
