@@ -13,7 +13,7 @@ script:
     - qmake "USE_DBUS=1" "USE_QRCODE=1" "USE_UPNP=1"
     - make
     - make check
-    - sudo cp TrumpCoin-qt /usr/bin/trumpcoin-qt
+    - sudo cp TrumpCoin-qt /usr/bin/TrumpCoin-qt
     - bash -ex appimage.sh
     
 branches:
