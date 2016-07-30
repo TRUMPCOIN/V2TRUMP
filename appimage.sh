@@ -38,7 +38,7 @@ cat > $APP.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=Trumpcoin
-Icon=trumpcoin.ico
+Icon=trumpcoin
 Type=Application
 Comment=Trumpcoin P2P Cryptocurrency
 Comment[fr]=Trumpcoin, monnaie virtuelle cryptographique pair à pair
