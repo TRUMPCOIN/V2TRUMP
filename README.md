@@ -1,6 +1,6 @@
 # V2TRUMP
 
-[![Build Status](https://travis-ci.org/gitgud-software/V2TRUMP.svg?branch=master)](https://travis-ci.org/gitgud-software/V2TRUMP)
+[![Build Status](https://travis-ci.org/TRUMPCOIN/V2TRUMP.svg?branch=master)](https://travis-ci.org/TRUMPCOIN/V2TRUMP)
 
 MEET THE TRUMP PROJECT
 
