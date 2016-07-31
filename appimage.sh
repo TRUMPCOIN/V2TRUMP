@@ -38,16 +38,19 @@ cat > $APP.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Name=Trumpcoin
-Icon=trumpcoin
+Icon=/usr/share/pixmaps/trumpcoin.ico
+Terminal=false
 Type=Application
+MimeType=x-scheme-handler/trumpcoin;
 Comment=Trumpcoin P2P Cryptocurrency
 Comment[fr]=Trumpcoin, monnaie virtuelle cryptographique pair à pair
 Comment[tr]=Trumpcoin, eşten eşe kriptografik sanal para birimi
-Categories=Office;
+Categories=Qt;Network;P2P;Office;Finance;
 Exec=$APP
+TryExec=TrumpCoin-qt
 EOF
 
-cp /usr/share/pixmaps/trumpcoin.ico trumpcoin.ico
+cp /usr/share/pixmaps/trumpcoin.ico ./usr/share/pixmaps/trumpcoin.ico
 
 ########################################################################
 # Copy in the dependencies that cannot be assumed to be available
