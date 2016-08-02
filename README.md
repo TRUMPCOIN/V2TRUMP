@@ -1,5 +1,7 @@
 # V2TRUMP
 
+[![Build Status](https://travis-ci.org/TRUMPCOIN/V2TRUMP.svg?branch=master)](https://travis-ci.org/TRUMPCOIN/V2TRUMP)
+
 MEET THE TRUMP PROJECT
 
 Donald Trump is a Liberty Loving - Free Speech - Anti PC - Unapologizing - Fair Trade Capitalist. We are free society advocates who embrace all those ideals and whilst Donald Trump may not embrace all of ours he is undoubtedly the only major western politician attempting advance the concept of a truly free society. We believe the basic concept of what digital currency is and its purpose has been mostly forgotten in the Crypto currency scene. Few, if any alt currency projects mention why Satoshi invented Bitcoin and do not promote the prime directive of a currency controlled by the people for the people free from the grip of the globalist establishment. Satoshi was clearly a free society advocate. This is a big part of what Trump Coin embraces.
